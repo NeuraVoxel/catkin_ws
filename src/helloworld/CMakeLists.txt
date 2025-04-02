@@ -11,7 +11,12 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
+  message_generation
 )
+
+add_service_files(FILES AddTwoInts.srv)
+generate_messages(DEPENDENCIES std_msgs)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -208,3 +213,6 @@ include_directories(
 
 add_executable(hello_cpp src/hello_cpp.cpp)
 target_link_libraries(hello_cpp ${catkin_LIBRARIES})
+
+add_executable(hello_publisher src/hello_publisher.cpp)
+target_link_libraries(hello_publisher ${catkin_LIBRARIES})
