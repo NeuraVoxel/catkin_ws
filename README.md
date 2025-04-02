@@ -1,4 +1,17 @@
 # catkin_ws
+catkin_ws/
+├── src/
+│   ├── package1/        # 功能包1
+│   │   ├── src/
+│   │   │   ├── node1.cpp  # 节点1
+│   │   │   └── node2.cpp  # 节点2
+│   │   ├── CMakeLists.txt  # 编译配置，生成两个可执行文件
+│   │   └── package.xml
+│   ├── package2/        # 功能包2
+│   │   └── scripts/
+│   │       ├── node3.py    # 节点3（Python）
+│   │       └── node4.py    # 节点4（Python）
+└── ...
 
 
 以下是 **ROS1 (Noetic/Melodic)** 下创建 Hello World 示例的详细步骤及代码：
