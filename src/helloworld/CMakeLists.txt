@@ -213,6 +213,3 @@ include_directories(
 
 add_executable(hello_cpp src/hello_cpp.cpp)
 target_link_libraries(hello_cpp ${catkin_LIBRARIES})
-
-add_executable(hello_publisher src/hello_publisher.cpp)
-target_link_libraries(hello_publisher ${catkin_LIBRARIES})

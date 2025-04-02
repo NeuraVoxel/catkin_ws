@@ -11,7 +11,12 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
+  message_generation
 )
+
+add_service_files(FILES AddTwoInts.srv)
+generate_messages(DEPENDENCIES std_msgs)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -135,6 +140,27 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/metacam_node_node.cpp)
 
+add_executable(hello src/hello.cpp)
+target_link_libraries(hello ${catkin_LIBRARIES})
+
+add_executable(hello_publisher src/hello_publisher.cpp)
+target_link_libraries(hello_publisher ${catkin_LIBRARIES})
+
+add_executable(pointcloud_publisher src/pointcloud_publisher.cpp)
+target_link_libraries(pointcloud_publisher ${catkin_LIBRARIES})
+
+# 添加可执行文件
+add_executable(server src/add_two_ints_server.cpp)
+add_executable(client src/add_two_ints_client.cpp)
+
+# 添加消息生成依赖[6,8](@ref)
+add_dependencies(server ${PROJECT_NAME}_gencpp)
+add_dependencies(client ${PROJECT_NAME}_gencpp)
+
+# 链接库
+target_link_libraries(server ${catkin_LIBRARIES})
+target_link_libraries(client ${catkin_LIBRARIES})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -204,5 +230,3 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-add_executable(hello src/hello.cpp)
-target_link_libraries(hello ${catkin_LIBRARIES})
