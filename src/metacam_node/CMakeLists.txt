@@ -158,6 +158,9 @@ target_link_libraries(storage_publisher ${catkin_LIBRARIES})
 add_executable(project_duration_publisher src/project_duration_publisher.cpp)
 target_link_libraries(project_duration_publisher ${catkin_LIBRARIES})
 
+add_executable(driver_status_publisher src/driver_status_publisher.cpp)
+target_link_libraries(driver_status_publisher ${catkin_LIBRARIES})
+
 # 添加可执行文件
 add_executable(server src/add_two_ints_server.cpp)
 add_executable(client src/add_two_ints_client.cpp)
