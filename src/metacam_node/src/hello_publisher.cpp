@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     ros::Publisher hello_pub = n.advertise<std_msgs::String>("/hello_topic", 10);
     
     // 设置循环的频率
-    ros::Rate loop_rate(1);  // 1Hz
+    ros::Rate loop_rate(10);  // 1Hz
 
     int count = 0;
     

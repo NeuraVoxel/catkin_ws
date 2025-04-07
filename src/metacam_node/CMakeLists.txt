@@ -149,6 +149,9 @@ target_link_libraries(hello_publisher ${catkin_LIBRARIES})
 add_executable(pointcloud_publisher src/pointcloud_publisher.cpp)
 target_link_libraries(pointcloud_publisher ${catkin_LIBRARIES})
 
+add_executable(battery_publisher src/battery_publisher.cpp)
+target_link_libraries(battery_publisher ${catkin_LIBRARIES})
+
 # 添加可执行文件
 add_executable(server src/add_two_ints_server.cpp)
 add_executable(client src/add_two_ints_client.cpp)
