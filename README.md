@@ -127,3 +127,11 @@ value: 10
 option: 'auto'
 flags: 0"
 ```
+
+## ip_config_server
+```
+source devel/setup.bash 
+rosrun metacam_node ip_config_server
+
+rosservice call /ip_config "ip_subnet: '192.168.0.33/24'"
+```

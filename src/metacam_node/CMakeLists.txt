@@ -20,6 +20,7 @@ add_service_files(
   AddTwoInts.srv
   Version.srv
   CameraControl.srv
+  IPConfig.srv
 )
 generate_messages(DEPENDENCIES std_msgs)
 
@@ -185,6 +186,11 @@ add_dependencies(get_version_server ${PROJECT_NAME}_gencpp)  # 确保生成消�
 add_executable(camera_control_server src/camera_control_server.cpp)
 target_link_libraries(camera_control_server ${catkin_LIBRARIES})
 add_dependencies(camera_control_server ${PROJECT_NAME}_gencpp)
+
+# 添加可执行文件
+add_executable(ip_config_server src/ip_config_server.cpp)
+target_link_libraries(ip_config_server ${catkin_LIBRARIES})
+add_dependencies(ip_config_server ${PROJECT_NAME}_gencpp)  # 依赖生成的消息代码
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
