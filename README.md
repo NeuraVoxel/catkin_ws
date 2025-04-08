@@ -106,3 +106,13 @@ rosrun helloworld hello_py.py
 • **Python脚本报错**：确认 `#!/usr/bin/env python` 的 Python 版本与系统一致（如 `python3` 需修改为 `#!/usr/bin/env python3`）。
 
 通过上述步骤，可快速验证 ROS1 环境及基础功能。如需更复杂的逻辑（如发布消息），可参考 ROS 官方文档扩展代码
+
+
+# Service
+## get_version_server
+
+```
+source devel/setup.bash 
+rosrun metacam_node get_version_server
+rosservice call /get_version
+```

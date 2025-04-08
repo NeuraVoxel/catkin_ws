@@ -15,7 +15,11 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
 )
 
-add_service_files(FILES AddTwoInts.srv)
+add_service_files(
+  FILES 
+  AddTwoInts.srv
+  Base.srv
+)
 generate_messages(DEPENDENCIES std_msgs)
 
 ## System dependencies are found with CMake's conventions
@@ -172,6 +176,10 @@ add_dependencies(client ${PROJECT_NAME}_gencpp)
 # 链接库
 target_link_libraries(server ${catkin_LIBRARIES})
 target_link_libraries(client ${catkin_LIBRARIES})
+
+add_executable(get_version_server src/get_version_server.cpp)
+target_link_libraries(get_version_server ${catkin_LIBRARIES})
+add_dependencies(get_version_server ${PROJECT_NAME}_gencpp)  # 确保生成消息代码
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
