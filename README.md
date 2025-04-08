@@ -116,3 +116,14 @@ source devel/setup.bash
 rosrun metacam_node get_version_server
 rosservice call /get_version
 ```
+
+## camera_control_server
+```
+source devel/setup.bash 
+rosrun metacam_node camera_control_server
+
+rosservice call /camera_control "mode: 1
+value: 10
+option: 'auto'
+flags: 0"
+```

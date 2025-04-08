@@ -1,0 +1,7 @@
+# 请求参数（示例：1/10/auto/0）
+int32 mode      # 控制模式（如1表示手动）
+int32 value     # 参数值（如10）
+string option   # 选项（如"auto"）
+int32 flags     # 标志位（如0）
+---
+# 响应（空）

@@ -1,10 +1,10 @@
 #include <ros/ros.h>
-#include "metacam_node/Base.h" // 替换为你的包名
+#include "metacam_node/Version.h" // 替换为你的包名
 
 // 服务回调函数
 bool handleVersionRequest(
-    metacam_node::Base::Request &req,
-    metacam_node::Base::Response &res)
+    metacam_node::Version::Request &req,
+    metacam_node::Version::Response &res)
 {
     res.version = "1.0.1"; // 设置响应版本号
     return true;

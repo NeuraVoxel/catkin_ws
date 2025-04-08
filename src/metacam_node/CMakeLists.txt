@@ -18,7 +18,8 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
   FILES 
   AddTwoInts.srv
-  Base.srv
+  Version.srv
+  CameraControl.srv
 )
 generate_messages(DEPENDENCIES std_msgs)
 
@@ -180,6 +181,10 @@ target_link_libraries(client ${catkin_LIBRARIES})
 add_executable(get_version_server src/get_version_server.cpp)
 target_link_libraries(get_version_server ${catkin_LIBRARIES})
 add_dependencies(get_version_server ${PROJECT_NAME}_gencpp)  # 确保生成消息代码
+
+add_executable(camera_control_server src/camera_control_server.cpp)
+target_link_libraries(camera_control_server ${catkin_LIBRARIES})
+add_dependencies(camera_control_server ${PROJECT_NAME}_gencpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
