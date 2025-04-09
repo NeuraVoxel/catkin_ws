@@ -1,0 +1,9 @@
+# Base.srv
+
+# 请求参数（兼容多操作）
+string command          # 操作类型： "project_list"
+---
+# 响应参数
+string[] tasks          # 返回任务列表（如 ["task1", "task2"]）
+bool success            # 操作状态
+string message          # 附加信息（如错误详情）

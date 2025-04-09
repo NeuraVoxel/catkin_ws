@@ -157,3 +157,11 @@ rosrun metacam_node usb_operation_server
 # 触发USB状态检查
 rosservice call /usb_operation "command: 'usb_operation'"
 ```
+
+## project_list_server
+```
+source devel/setup.bash 
+rosrun metacam_node project_list_server
+# 触发任务列表查询
+rosservice call /project_list "command: 'project_list'"
+```
