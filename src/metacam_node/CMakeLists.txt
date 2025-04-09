@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   message_generation
+  pcl_ros
 )
 
 add_service_files(
@@ -25,6 +26,7 @@ add_service_files(
   USBOperation.srv
   ProjectList.srv
   ProjectImage.srv
+  ProjectCloud.srv
 )
 generate_messages(DEPENDENCIES std_msgs)
 
@@ -211,6 +213,14 @@ add_dependencies(project_list_server ${PROJECT_NAME}_gencpp)
 add_executable(project_image_server src/project_image_server.cpp)
 target_link_libraries(project_image_server ${catkin_LIBRARIES})
 add_dependencies(project_image_server ${PROJECT_NAME}_gencpp)
+
+# 添加服务端和客户端可执行文件
+add_executable(project_cloud_server src/project_cloud_server.cpp)
+target_link_libraries(project_cloud_server
+  ${catkin_LIBRARIES}
+  ${PCL_LIBRARIES}
+)
+add_dependencies(project_cloud_server ${PROJECT_NAME}_gencpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

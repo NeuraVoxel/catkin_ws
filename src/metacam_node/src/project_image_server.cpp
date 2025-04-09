@@ -28,7 +28,7 @@ bool handleProjectImage(
     std::string image_path;
     if (req.task_name == "task1")
     {
-        image_path = "/path/to/task1_image.jpg";
+        image_path = "/mnt/ubuntu/NeuraVoxel/MetaCam/catkin_ws/src/metacam_node/images/1744208620331.png";
     }
     else
     {

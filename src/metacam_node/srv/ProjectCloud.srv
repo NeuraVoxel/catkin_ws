@@ -1,0 +1,7 @@
+# 请求参数
+string task_name        # 任务标识（如"task1"）
+---
+# 响应参数
+uint8[] pcd_data        # PCD文件二进制流
+bool success            # 操作状态
+string message          # 附加信息（如错误详情）

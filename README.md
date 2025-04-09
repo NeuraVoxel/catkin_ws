@@ -174,3 +174,12 @@ rosrun metacam_node project_image_server
 # 请求task1的图片数据
 rosservice call /project_image "task_name: 'task1'"
 ```
+
+
+## project_cloud_server
+```
+source devel/setup.bash 
+rosrun metacam_node project_cloud_server
+# 请求task1的点云数据
+rosservice call /project_cloud "task_name: 'task1'"
+```
