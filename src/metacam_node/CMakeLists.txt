@@ -24,6 +24,7 @@ add_service_files(
   ProjectControl.srv
   USBOperation.srv
   ProjectList.srv
+  ProjectImage.srv
 )
 generate_messages(DEPENDENCIES std_msgs)
 
@@ -206,6 +207,10 @@ add_dependencies(usb_operation_server ${PROJECT_NAME}_gencpp)
 add_executable(project_list_server src/project_list_server.cpp)
 target_link_libraries(project_list_server ${catkin_LIBRARIES})
 add_dependencies(project_list_server ${PROJECT_NAME}_gencpp)
+
+add_executable(project_image_server src/project_image_server.cpp)
+target_link_libraries(project_image_server ${catkin_LIBRARIES})
+add_dependencies(project_image_server ${PROJECT_NAME}_gencpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

@@ -165,3 +165,12 @@ rosrun metacam_node project_list_server
 # 触发任务列表查询
 rosservice call /project_list "command: 'project_list'"
 ```
+
+
+## project_image_server
+```
+source devel/setup.bash 
+rosrun metacam_node project_image_server
+# 请求task1的图片数据
+rosservice call /project_image "task_name: 'task1'"
+```
