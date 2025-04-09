@@ -1,0 +1,8 @@
+# Base.srv
+
+# 请求参数（兼容多操作）
+string command          # 操作类型： "usb_operation"
+---
+# 响应参数
+bool success            # 操作状态（True/False）
+string message          # 附加信息（如错误详情）

@@ -137,7 +137,7 @@ rosservice call /ip_config "ip_subnet: '192.168.0.33/24'"
 ```
 
 
-## 
+## project_control_server
 ```
 source devel/setup.bash 
 rosrun metacam_node project_control_server
@@ -148,4 +148,12 @@ action: 'start'"
 # 停止项目
 rosservice call /project_control "command: 'project_control'
 action: 'stop'"
+```
+
+## usb_operation_server
+```
+source devel/setup.bash 
+rosrun metacam_node usb_operation_server
+# 触发USB状态检查
+rosservice call /usb_operation "command: 'usb_operation'"
 ```
