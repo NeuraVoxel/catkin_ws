@@ -1,0 +1,9 @@
+# Base.srv
+
+# 请求参数（兼容多操作）
+string command          # 操作类型： "project_control"
+string action           # 动作指令： "start" 或 "stop"
+---
+# 响应参数
+bool success            # 操作状态
+string message          # 附加信息（如错误提示）

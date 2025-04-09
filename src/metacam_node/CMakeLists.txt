@@ -21,6 +21,7 @@ add_service_files(
   Version.srv
   CameraControl.srv
   IPConfig.srv
+  ProjectControl.srv
 )
 generate_messages(DEPENDENCIES std_msgs)
 
@@ -191,6 +192,10 @@ add_dependencies(camera_control_server ${PROJECT_NAME}_gencpp)
 add_executable(ip_config_server src/ip_config_server.cpp)
 target_link_libraries(ip_config_server ${catkin_LIBRARIES})
 add_dependencies(ip_config_server ${PROJECT_NAME}_gencpp)  # 依赖生成的消息代码
+
+add_executable(project_control_server src/project_control_server.cpp)
+target_link_libraries(project_control_server ${catkin_LIBRARIES})
+add_dependencies(project_control_server ${PROJECT_NAME}_gencpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

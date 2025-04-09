@@ -135,3 +135,17 @@ rosrun metacam_node ip_config_server
 
 rosservice call /ip_config "ip_subnet: '192.168.0.33/24'"
 ```
+
+
+## 
+```
+source devel/setup.bash 
+rosrun metacam_node project_control_server
+# 启动项目
+rosservice call /project_control "command: 'project_control'
+action: 'start'"
+
+# 停止项目
+rosservice call /project_control "command: 'project_control'
+action: 'stop'"
+```
