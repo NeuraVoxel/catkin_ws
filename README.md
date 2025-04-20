@@ -183,3 +183,11 @@ rosrun metacam_node project_cloud_server
 # 请求task1的点云数据
 rosservice call /project_cloud "task_name: 'task1'"
 ```
+
+
+## time_sync_server
+```
+source devel/setup.bash 
+rosrun metacam_node time_sync_server
+rosservice call /set_system_time "timestamp: '2025-04-20 21:51:53.628'"
+```
