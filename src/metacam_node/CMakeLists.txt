@@ -27,6 +27,7 @@ add_service_files(
   ProjectList.srv
   ProjectImage.srv
   ProjectCloud.srv
+  TimeSync.srv
 )
 generate_messages(DEPENDENCIES std_msgs)
 
@@ -221,6 +222,11 @@ target_link_libraries(project_cloud_server
   ${PCL_LIBRARIES}
 )
 add_dependencies(project_cloud_server ${PROJECT_NAME}_gencpp)
+
+
+add_executable(time_sync_server src/time_sync_server.cpp)
+target_link_libraries(time_sync_server ${catkin_LIBRARIES})
+# add_dependencies(project_image_server ${PROJECT_NAME}_gencpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

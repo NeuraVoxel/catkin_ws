@@ -1,0 +1,3 @@
+string timestamp  # 入参：时间戳字符串
+---
+string result     # 出参：处理结果
