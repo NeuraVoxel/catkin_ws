@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
     ros::NodeHandle nh;
 
     ros::ServiceServer service = nh.advertiseService(
-        "time_sync", 
+        "set_system_time", 
         handleTimeRequest
     );
 

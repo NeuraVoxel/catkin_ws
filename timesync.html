@@ -29,8 +29,8 @@
         // 创建 Service 客户端
         const timeSyncService = new ROSLIB.Service({
             ros: ros,
-            name: '/time_sync',
-            serviceType: 'time_sync_cpp/TimeSync'  // 与服务类型一致
+            name: '/set_system_time',
+            serviceType: 'metacam_node/TimeSync'  // 与服务类型一致
         });
 
         // 服务调用函数
