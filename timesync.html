@@ -57,26 +57,19 @@
         }
 
         function getCurrentTimestamp() {
-            // 获取基准时间（毫秒级）
             const now = new Date();
-            const baseTime = now.getTime(); // 单位：毫秒
 
-            // 获取高精度相对时间（微秒级）
-            const perf = performance.now(); // 单位：毫秒，但小数部分为微秒
-            const microSeconds = (perf % 1) * 1000; // 提取微秒部分（0~999微秒）
-
-            // 构造本地时间字符串（格式：YYYY-MM-DD HH:mm:ss）
+            // 提取本地时间组件
             const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // 月份从0开始，补零到2位
             const day = String(now.getDate()).padStart(2, '0');
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
+            const milliseconds = String(now.getMilliseconds()).padStart(3, '0'); // 补零到3位
 
-            // 合成纳秒部分（伪纳秒：毫秒*1e6 + 微秒*1e3）
-            const nanoSeconds = String(Math.floor(microSeconds * 1000)).padStart(9, '0');
-
-            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${nanoSeconds}`;
+            // 格式：YYYY-MM-DD HH:mm:ss.sss
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
         }
     </script>
 </body>
