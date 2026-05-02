@@ -191,3 +191,22 @@ source devel/setup.bash
 rosrun metacam_node time_sync_server
 rosservice call /set_system_time "timestamp: '2025-04-20 21:51:53.628'"
 ```
+
+
+
+# 编译
+cd /home/jeff/Documents/Robotics/MetaCam/catkin_ws
+catkin_make
+
+# Source
+source devel/setup.bash
+
+# 运行 GGA Publisher
+rosrun rtk_bridge gga_publisher.py
+
+# 运行 RTCM Subscriber
+rosrun rtk_bridge rtcm_subscriber.py
+
+# 带参数运行
+rosrun rtk_bridge gga_publisher.py _publish_rate:=2.0 _fix_quality:=4
+rosrun rtk_bridge rtcm_subscriber.py _input_topic:=/rtcm/data _status_topic:=/rtcm/status
